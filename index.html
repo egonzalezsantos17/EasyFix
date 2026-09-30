@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Easy Fix: phone, computer and console repair in Cherokee County, GA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFFFFF; --ink:#000000; --muted:#555555; --card:#FFFFFF; --line:#CFCFCF;
+  --mat:#000000; --mat-line:rgba(255,255,255,.11); --on-mat:#FFFFFF; --on-mat-muted:#B8B8B8;
+  --focus:#000000;
+  --display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#000000; --ink:#FFFFFF; --muted:#A8A8A8; --card:#121212; --line:#333333;
+    --mat:#0B0B0B; --focus:#FFFFFF;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#000000; --ink:#FFFFFF; --muted:#A8A8A8; --card:#121212; --line:#333333;
+  --mat:#0B0B0B; --focus:#FFFFFF;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.55;-webkit-text-size-adjust:100%}
+h1,h2,h3{font-family:var(--display);line-height:1.05;margin:0;letter-spacing:-.02em}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 1.25rem}
+
+/* header + hero sit on a cutting-mat grid */
+.mat,.promise,.book{--focus:#FFFFFF}
+.picker{--focus:#000000}
+.mat{
+  background:
+    linear-gradient(var(--mat-line) 1px,transparent 1px) 0 0/28px 28px,
+    linear-gradient(90deg,var(--mat-line) 1px,transparent 1px) 0 0/28px 28px,
+    var(--mat);
+  color:var(--on-mat);
+}
+.bar{display:flex;align-items:center;justify-content:space-between;padding:1.1rem 0}
+.brand{font-family:var(--display);font-weight:800;font-size:1.45rem;letter-spacing:-.03em;text-decoration:none;display:flex;align-items:center;gap:.55rem}
+.brand i{width:1.05rem;height:1.05rem;background:#FFFFFF;display:inline-block;transform:rotate(45deg);border-radius:3px}
+.bar nav{display:flex;gap:1.4rem;font-size:.97rem}
+.bar nav a{text-decoration:none;color:var(--on-mat-muted)}
+.bar nav a:hover{color:var(--on-mat)}
+@media (max-width:560px){.bar nav a:not(.keep){display:none}}
+
+.hero{display:grid;gap:2.5rem;padding:2.5rem 0 4rem;grid-template-columns:1fr}
+@media (min-width:880px){.hero{grid-template-columns:1.05fr .95fr;align-items:center;padding:4rem 0 5.5rem;gap:3.5rem}}
+.hero h1{font-size:clamp(2.6rem,7.2vw,4.9rem);font-weight:800}
+.hero .lede{margin-top:1.25rem;font-size:1.2rem;color:var(--on-mat-muted);max-width:30rem}
+.hero .facts{margin:1.75rem 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;color:var(--on-mat)}
+.hero .facts li{display:flex;align-items:center;gap:.5rem;font-weight:500}
+.hero .facts li::before{content:"";width:.5rem;height:.5rem;background:#FFFFFF;border-radius:50%}
+
+/* the picker: the memorable element */
+.picker{background:var(--card);color:var(--ink);border-radius:14px;padding:1.4rem;box-shadow:0 0 0 1px rgba(0,0,0,.25),0 18px 40px -18px rgba(0,0,0,.6);border-top:6px solid #FFFFFF}
+.picker h2{font-size:1.45rem}
+.picker .sub{color:var(--muted);font-size:.95rem;margin:.3rem 0 1rem}
+.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:.4rem;margin-bottom:1rem}
+.tab{font:inherit;font-weight:600;padding:.65rem .4rem;border:1.5px solid var(--line);background:transparent;color:var(--ink);border-radius:8px;cursor:pointer;min-height:44px}
+.tab[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.issues{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1.1rem}
+.issue{font:inherit;font-size:.95rem;padding:.5rem .8rem;border:1.5px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;cursor:pointer;min-height:44px}
+.issue[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink);font-weight:600}
+.quote{border-top:1.5px dashed var(--line);padding-top:1rem;display:flex;align-items:end;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.quote .price{font-family:var(--display);font-weight:800;font-size:2.4rem;line-height:1;letter-spacing:-.03em}
+.quote .price small{font-size:1rem;font-weight:500;color:var(--muted);letter-spacing:0;margin-right:.25rem}
+.quote .time{color:var(--muted);font-size:.95rem;margin-top:.3rem}
+.quote[data-flash="1"] .price{animation:flash .35s ease-out}
+@keyframes flash{from{background:var(--ink);color:var(--bg)}to{background:transparent}}
+.btn{display:inline-block;font:inherit;font-weight:700;text-decoration:none;background:#000;color:#fff;border:2px solid #000;border-radius:10px;padding:.85rem 1.3rem;cursor:pointer;min-height:48px;text-align:center}
+.btn:hover{background:#fff;color:#000}
+.book .btn,.mat .btn.ghost{background:#fff;color:#000;border-color:#fff}
+.book .btn:hover,.mat .btn.ghost:hover{background:#000;color:#fff}
+.btn.ghost{background:transparent;color:#fff;border-color:#fff}
+.btn.ghost:hover{background:#fff;color:#000}
+.cta-row{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.75rem}
+.contact{margin-top:1.75rem;display:grid;gap:.35rem;font-size:1.1rem}
+.contact a{font-weight:600;text-underline-offset:4px}
+.fine{font-size:.82rem;color:var(--muted);margin-top:.9rem}
+
+section.block{padding:4.5rem 0}
+section.block h2{font-size:clamp(1.9rem,4.5vw,2.9rem);max-width:22ch}
+.steps{margin:2.25rem 0 0;padding:0;list-style:none;display:grid;gap:1.75rem;counter-reset:s}
+@media (min-width:760px){.steps{grid-template-columns:repeat(3,1fr);gap:2.5rem}}
+.steps li{counter-increment:s;border-top:2px solid var(--ink);padding-top:1rem}
+.steps li::before{content:"Step " counter(s);display:block;font-size:.9rem;color:var(--muted);font-weight:600;margin-bottom:.4rem}
+.steps h3{font-size:1.4rem;margin-bottom:.5rem}
+.steps p{color:var(--muted);max-width:32ch}
+
+.promise{background:var(--ink);color:var(--bg)}
+.promise h2{max-width:20ch}
+.pl{margin:2.25rem 0 0;padding:0;list-style:none}
+.pl li{display:grid;gap:.25rem 2rem;padding:1.15rem 0;border-top:1px solid rgba(128,128,128,.4)}
+@media (min-width:760px){.pl li{grid-template-columns:17rem 1fr}}
+.pl strong{font-family:var(--display);font-size:1.3rem;letter-spacing:-.01em}
+.pl span{opacity:.78;max-width:48ch}
+
+.faq{max-width:46rem;margin-top:2rem}
+.faq details{border-top:1px solid var(--line);padding:1rem 0}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;font-weight:600;font-size:1.1rem;list-style:none;display:flex;justify-content:space-between;gap:1rem}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-weight:400;font-size:1.4rem;line-height:1}
+.faq details[open] summary::after{content:"\2212"}
+.faq p{color:var(--muted);margin-top:.6rem;max-width:60ch}
+
+.book{background:var(--mat);color:var(--on-mat)}
+.book .grid{display:grid;gap:2.5rem}
+@media (min-width:880px){.book .grid{grid-template-columns:1fr 1fr;gap:4rem}}
+.book p.lead{color:var(--on-mat-muted);margin-top:1rem;max-width:30rem}
+form{display:grid;gap:1rem}
+label{display:grid;gap:.35rem;font-weight:600;font-size:.97rem}
+input,select,textarea{font:inherit;font-weight:400;color:#0F1A17;background:#fff;border:1.5px solid transparent;border-radius:8px;padding:.7rem .8rem;width:100%;min-height:46px}
+textarea{min-height:92px;resize:vertical}
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #fff;outline-offset:2px}
+.note{font-size:.9rem;color:var(--on-mat-muted);min-height:1.3em}
+footer{padding:2rem 0 2.5rem;color:var(--muted);font-size:.92rem}
+footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.quote[data-flash="1"] .price{animation:none}}
+</style>
+</head>
+<body>
+
+<div class="mat">
+  <div class="wrap">
+    <header class="bar">
+      <a class="brand" href="#top"><i aria-hidden="true"></i>Easy Fix</a>
+      <nav aria-label="Main">
+        <a href="#how">How it works</a>
+        <a href="#promise">Our promise</a>
+        <a href="#faq">FAQ</a>
+        <a class="keep" href="#book">Book a repair</a>
+      </nav>
+    </header>
+
+    <main id="top" class="hero">
+      <div>
+        <h1>Cracked, dead or stuck? We fix it.</h1>
+        <p class="lede">Phones, laptops and game consoles repaired with a flat price quoted up front and a warranty on every job.</p>
+        <ul class="facts">
+          <li>Serving Cherokee County, GA</li>
+          <li>Free diagnosis</li>
+          <li>Flat, quoted price</li>
+          <li>Warranty on every repair</li>
+        </ul>
+        <div class="cta-row">
+          <a class="btn ghost" href="tel:+17068893605">Call 706-889-3605</a>
+          <a class="btn ghost" href="mailto:egonzalezsantos17@gmail.com">Email us</a>
+        </div>
+      </div>
+
+      <div class="picker" aria-labelledby="pk-title">
+        <h2 id="pk-title">What's broken?</h2>
+        <p class="sub">Pick a device and a problem to see a typical price.</p>
+        <div class="tabs" id="tabs" role="group" aria-label="Device type"></div>
+        <div class="issues" id="issues" role="group" aria-label="Problem"></div>
+        <div class="quote" id="quote" aria-live="polite">
+          <div>
+            <div class="price" id="price"></div>
+            <div class="time" id="time"></div>
+          </div>
+          <a class="btn" href="#book" id="bookbtn">Book this repair</a>
+        </div>
+        <p class="fine">Typical prices. Your final quote is confirmed after a free diagnosis.</p>
+      </div>
+    </main>
+  </div>
+</div>
+
+<section class="block" id="how">
+  <div class="wrap">
+    <h2>From broken to fixed in three steps</h2>
+    <ol class="steps">
+      <li><h3>Tell us what's wrong</h3><p>Choose your device and describe the problem. It takes about a minute.</p></li>
+      <li><h3>Get a flat quote</h3><p>We diagnose it for free and give you one price. No surprise add-ons.</p></li>
+      <li><h3>Get it back working</h3><p>Approve the quote and we repair it. Every job comes with a warranty.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="block promise" id="promise">
+  <div class="wrap">
+    <h2>What you can count on</h2>
+    <ul class="pl">
+      <li><strong>The price you were quoted</strong><span>If we can't fix it, or you decline the quote, you pay nothing for the diagnosis.</span></li>
+      <li><strong>A warranty on the work</strong><span>If the repaired part fails within the warranty period, we fix it again at no charge.</span></li>
+      <li><strong>Your data stays yours</strong><span>We only need the device to work. We never look through your files or photos.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="block" id="faq">
+  <div class="wrap">
+    <h2>Questions people ask first</h2>
+    <div class="faq">
+      <details><summary>Where do you work?</summary><p>We serve Cherokee County, Georgia. Call or email us and we'll work out the easiest way to get your device fixed.</p></details>
+      <details><summary>How long does a repair take?</summary><p>Most phone screens and batteries are done the same day. Laptops and consoles usually take one to three days, depending on parts.</p></details>
+      <details><summary>Will I lose my data?</summary><p>Screen, battery and port repairs don't touch your data. If a repair carries any risk to it, we tell you before we start and suggest a backup.</p></details>
+      <details><summary>What if you can't fix it?</summary><p>You don't pay for the diagnosis, and we'll tell you honestly whether replacing the device makes more sense.</p></details>
+      <details><summary>Do you use original parts?</summary><p>We tell you which part we're using before you approve the quote, so you always know what's going into your device.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="block book" id="book">
+  <div class="wrap grid">
+    <div>
+      <h2>Book a repair</h2>
+      <p class="lead">Tell us about the problem and we'll reply with your flat quote. We serve Cherokee County, Georgia.</p>
+      <div class="contact">
+        <span>Prefer to talk? Call us</span>
+        <a href="tel:+17068893605">706-889-3605</a>
+        <a href="mailto:egonzalezsantos17@gmail.com">egonzalezsantos17@gmail.com</a>
+      </div>
+    </div>
+    <form id="form" novalidate>
+      <label>Your name<input name="name" autocomplete="name" required></label>
+      <label>Phone or email<input name="contact" autocomplete="email" required></label>
+      <label>Device and model<input name="device" placeholder="e.g. iPhone 13, Dell XPS 13, PS5" required></label>
+      <label>What's wrong?<select name="issue" id="issueSel"></select></label>
+      <label>Anything else we should know?<textarea name="notes"></textarea></label>
+      <button class="btn" type="submit">Send repair request</button>
+      <p class="note" id="note" role="status"></p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; Easy Fix &middot; Phone, computer and console repair &middot; Cherokee County, GA</span>
+    <span><a href="tel:+17068893605">706-889-3605</a> &middot; <a href="mailto:egonzalezsantos17@gmail.com">egonzalezsantos17@gmail.com</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Example prices and times. Edit these to match your real pricing.
+  var DATA = {
+    "Phone": [
+      ["Cracked screen", 89, "Usually same day"],
+      ["Battery replacement", 59, "Usually same day"],
+      ["Charging port", 69, "Usually same day"],
+      ["Water damage", 79, "1 to 3 days"]
+    ],
+    "Computer": [
+      ["Won't turn on", 79, "1 to 3 days"],
+      ["Slow / needs upgrade", 69, "Usually same day"],
+      ["Cracked screen", 149, "2 to 4 days"],
+      ["Battery replacement", 99, "1 to 2 days"]
+    ],
+    "Console": [
+      ["HDMI port", 89, "1 to 3 days"],
+      ["Controller drift", 39, "Usually same day"],
+      ["Overheating / loud fan", 69, "1 to 2 days"],
+      ["Disc drive", 79, "1 to 3 days"]
+    ]
+  };
+  var dev = "Phone", idx = 0;
+  var tabs = document.getElementById("tabs"), issues = document.getElementById("issues");
+  var price = document.getElementById("price"), time = document.getElementById("time");
+  var quote = document.getElementById("quote"), sel = document.getElementById("issueSel");
+
+  // booking dropdown gets every issue plus "Something else"
+  Object.keys(DATA).forEach(function(d){
+    DATA[d].forEach(function(r){
+      var o = document.createElement("option"); o.value = d + ": " + r[0]; o.textContent = d + ": " + r[0]; sel.appendChild(o);
+    });
+  });
+  var other = document.createElement("option"); other.value = "Something else"; other.textContent = "Something else"; sel.appendChild(other);
+
+  function renderTabs(){
+    tabs.innerHTML = "";
+    Object.keys(DATA).forEach(function(d){
+      var b = document.createElement("button");
+      b.type = "button"; b.className = "tab"; b.textContent = d;
+      b.setAttribute("aria-pressed", d === dev);
+      b.onclick = function(){ dev = d; idx = 0; render(false); };
+      tabs.appendChild(b);
+    });
+  }
+  function renderIssues(){
+    issues.innerHTML = "";
+    DATA[dev].forEach(function(r, i){
+      var b = document.createElement("button");
+      b.type = "button"; b.className = "issue"; b.textContent = r[0];
+      b.setAttribute("aria-pressed", i === idx);
+      b.onclick = function(){ idx = i; render(true); };
+      issues.appendChild(b);
+    });
+  }
+  function render(flash){
+    renderTabs(); renderIssues();
+    var r = DATA[dev][idx];
+    price.innerHTML = "<small>from</small>$" + r[1];
+    time.textContent = r[2];
+    quote.removeAttribute("data-flash");
+    if(flash){ void quote.offsetWidth; quote.setAttribute("data-flash","1"); }
+    sel.value = dev + ": " + r[0];
+  }
+  render(false);
+
+  document.getElementById("bookbtn").addEventListener("click", function(){ sel.value = dev + ": " + DATA[dev][idx][0]; });
+
+  // No server on this page: the form opens the visitor's email app with the request filled in.
+  var TO = "egonzalezsantos17@gmail.com";
+  document.getElementById("form").addEventListener("submit", function(e){
+    e.preventDefault();
+    var f = e.target, note = document.getElementById("note");
+    if(!f.name.value.trim() || !f.contact.value.trim() || !f.device.value.trim()){
+      note.textContent = "Please add your name, contact details and device.";
+      return;
+    }
+    var body = "Name: " + f.name.value + "\nContact: " + f.contact.value + "\nDevice: " + f.device.value +
+               "\nProblem: " + f.issue.value + "\nNotes: " + f.notes.value;
+    window.location.href = "mailto:" + TO + "?subject=" + encodeURIComponent("Repair request: " + f.device.value) + "&body=" + encodeURIComponent(body);
+    note.textContent = "Your email app should open with the request ready to send.";
+  });
+})();
+</script>
+</body>
+</html>
